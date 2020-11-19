@@ -99,56 +99,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CRUD ABID</title>
+	<title>CRUD Table Input</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="styleindex.css">
 </head>
 <body>
 <div class="container mt-4">
 
-	<font color="black" style="font-family: Candara">
-		<h1 class="text-center">Website Murid SMK Telkom Purwokerto Tahun 2020 Form/2021</h1>
+	<font color="black" style="font-family: Monserrat">
+		<h1 class="text-center">Website Murid SMK Telkom Purwokerto Tahun 2020/2021</h1>
 		<h2 class="text-center">Abid Ganteng Banget (XI RPL 3)</h2>
 	</font>
 
 	<!-- AWAL CARD FORM -->
 	<div class="card mt-5">
-	  <div class="card-header bg-primary text-white">
+	  <div class="card-header bg-success text-white">
 	    SMK Telkom Purwokerto Input Murid
 	  </div>
 	  <div class="card-body">
 	    <form method="post" action="">
 	    	<div class="form-group">
-	    		<lable>Student ID Number</lable>
-	    		<input type="text" name="tnim" value="<?=@$vnim?>" class="form-control" placeholder="Enter Your Student ID Number Here!" required="">
+	    		<lable>ID Murid</lable>
+	    		<input type="text" name="tnim" value="<?=@$vnim?>" class="form-control" placeholder="Tekan ID Number Disini...!!!" required="">
 	    	</div>
 	    	<div class="form-group">
-	    		<lable>Name</lable>
-	    		<input type="text" name="tnama" value="<?=@$vnama?>" class="form-control" placeholder="Enter Your Name Here!" required="">
+	    		<lable>Nama Murid</lable>
+	    		<input type="text" name="tnama" value="<?=@$vnama?>" class="form-control" placeholder="Tekan Nama mu Disini!!" required="">
 	    	</div>
 	    	<div class="form-group">
-	    		<lable>Address</lable>
-	    		<textarea class="form-control" name="talamat"  placeholder="Enter Your Address Here!"><?=@$valamat?></textarea>
+	    		<lable>Alamat Murid</lable>
+	    		<textarea class="form-control" name="talamat"  placeholder="Tekan Alamat Anda"><?=@$valamat?></textarea>
 	    	</div>
 	    	<div class="form-group">
-	    		<lable>Study Program</lable>
+	    		<lable>Jurusan Murid</lable>
 	    		<select class="form-control" name="tprodi">
 	    			<option value="<?=@$vprodi?>"><?=@$vprodi?></option>
-	    			<option value="BSc in Economics and Business Economics">BSc in Economics and Business Economics</option>
-	    			<option value="MA in American Studies">EMA in American Studies</option>
-	    			<option value="MSc in International Economics and Business">MSc in International Economics and Business</option>
-	    			<option value="S3 KEBIDANAN"> S3 KEBIDANAN</option>
-	    			<option value="D3 KEJAKSAAN">D3 KEJAKSAAN</option>
-	    			<option value="SI GAME ONLINE">SI GAME ONLINE</option>
-	    			<option value="S2 MADANG DULU">S2 MADANG DULU</option>
-	    			<option value="D4 HUKUM">D4 HUKUM</option>
-	    			<option value="D2 EKONOMI">D2 EKONOMI</option>
-	    			<option value="F3 KEDOKTERAN (SMK PUJAAN HATI INDONESIA)">F3 KEDOKTERAN (SMK PUJAAN HATI INDONESIA)</option>
+	    			<option value="TKJ">TKJ (TEKNIK KOMPUTER JARINGAN)</option>
+	    			<option value="TJA">TJA (TEKNIK JARINGAN AKSES)</option>
+	    			<option value="MULTIMEDIA">MULTIMEDIA</option>
+	    			<option value="RPL">RPL (REKAYASA PERANGKAT LUNAK)</option>
+	    			<option value="TEKNIK MESIN">TEKNIK MESIN</option>
+	    			<option value="ELETRO">ELETRO</option>
+	    			<option value="GAMING">GAMING</option>
+	    			<option value="KEDOKTERAN">KEDOKTERAN</option>
+	    			<option value=">TKJ">TKJ (TEKNIK KOMPUTER JARINGAN)</option>
+	    			<option value="TKRO (TEKNIK KENDARAAN RINGAN OTOMOTIF)">TKRO (TEKNIK KENDARAAN RINGAN OTOMOTIF)</option>
 	    		</select>
 	    	</div>
 
-			<button type="submit" class="btn btn-warning text-white" name="bsave">Save</button>
-			<button type="reset" class="btn btn-danger" name="breset">Reset Form</button>
+			<button type="submit" class="btn btn-warning text-white" name="bsave">Kirim</button>
+			<button type="reset" class="btn btn-success" name="breset">Set Ulang Form</button>
 
 	    </form>
 	  </div>
@@ -157,19 +157,19 @@
 
 		<!-- AWAL CARD TABEL -->
 	<div class="card mt-3">
-	  <div class="card-header bg-warning text-white font-18pt">
-	    Student List
+	  <div class="card-header bg-success text-white font-18pt">
+	    List Nama Murid
 	  </div>
 	  <div class="card-body">
 	   
 	  	<table class="table table-bordered table-striped">
 	  		<tr>
-	  			<th>Number</th>
-	  			<th>Student ID Number</th>
-	  			<th>Name</th>
-	  			<th>Address</th>
-	  			<th>Study Program</th>
-	  			<th>Action for Table Data</th>
+	  			<th>No</th>
+	  			<th>ID MURID</th>
+	  			<th>Nama Murid</th>
+	  			<th>Alamat Murid</th>
+	  			<th>Jurusan Murid</th>
+	  			<th>Perintah</th>
 	  		</tr>
 	  		<?php
 	  			$no = 1; 
@@ -183,8 +183,8 @@
 	  			<td><?=$data['alamat'];?></td>
 	  			<td><?=$data['prodi'];?></td>
 	  			<td>
-	  				<a href="index.php?hal=edit&id=<?=$data['id_mhs']?>" class="btn btn-success">Edit</a>
-	  				<a href="index.php?hal=hapus&id=<?=$data['id_mhs']?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?') " class="btn btn-danger">Delete</a>
+	  				<a href="index.php?hal=edit&id=<?=$data['id_mhs']?>" class="btn btn-success">Edit Dong</a>
+	  				<a href="index.php?hal=hapus&id=<?=$data['id_mhs']?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?') " class="btn btn-warning">Hapus Dong</a>
 	  			</td>
 
 	  		</tr>
